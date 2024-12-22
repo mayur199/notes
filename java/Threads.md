@@ -89,5 +89,3 @@ Imagine ek ghar ka kaam:
 2. **Multithreading:** Bartan alag banda kar raha hai, safai alag banda, aur cooking alag banda. Kaam tezi se hoga.
 
 ---
-
-Kya yeh explanation samajhne mein madad mili? 😊
