@@ -3,21 +3,19 @@ https://google.github.io/styleguide/javaguide.html
 https://codingbat.com/java/Warmup-1
 https://www.codecademy.com/resources/cheatsheets/language/java
 
-
-
------>>>> Casting
+**----->>>> Casting**
 Casting ka matlab hai kisi variable ko ek data type se dusre data type mein convert karna. Java mein, casting do tarike se hoti hai: implicit casting aur explicit casting.
 
------>>>> Implicit Casting
+**----->>>> Implicit Casting**
 Implicit Casting tab hoti hai jab chhote (smaller) data type ko bade (larger) data type mein convert kiya jata hai.
 
-Example:
+**Example**:
 
 int a = 10;
 double b = a;  // Implicit casting from int to double
 System.out.println(b); // Output: 10.0
 
------>>>> Explicit Casting
+**----->>>> Explicit Casting**
 Explicit Casting tab hoti hai jab bade (larger) data type ko chhote (smaller) data type mein convert karte hain
 
 Example:
@@ -26,19 +24,18 @@ double x = 10.5;
 int y = (int) x;  // Explicit casting from double to int
 System.out.println(y); // Output: 10
 
-
 Java mein, implicit casting (automatic conversion) aur explicit casting (manual conversion) do tarikon se hoti hai
 
---->>>> Upcasting--
+**--->>>> Upcasting--**
 Upcasting mein hum subclass (child class) ka reference superclass (parent class) ke type mein cast karte hain. Matlab, child class ka object ko parent class ke reference se point karna.
 
-Key Points:
+**Key Points:**
 
 Upcasting automatic hoti hai (implicit).
 Isme hum child class ke specific methods ko directly use nahi kar sakte (sirf overridden methods accessible hote hain jo parent class mein bhi defined hain).
 Yeh mainly polymorphism achieve karne ke liye useful hai.
 
-Upcasting Example
+**Upcasting Example**
 
 class Animal {
     void sound() {
@@ -64,8 +61,7 @@ public class Main {
     }
 }
 
-
--->>>Downcasting----
+**-->>>Downcasting----**
 Downcasting mein hum superclass (parent class) ke reference ko subclass (child class) ke type mein cast karte hain. Matlab, parent class ka reference ko child class ke reference ke jaisa treat karna.
 
 Key Points:
@@ -74,8 +70,7 @@ Downcasting explicit hoti hai, aur manually ki jati hai (by using (ChildClass)).
 Yeh tabhi possible hai jab original object actually subclass ka ho, nahi toh ClassCastException throw hoga.
 Downcasting ke baad hum child class ke specific methods ko access kar sakte hain.
 
-
-Downcasting Example
+**Downcasting Example**
 
 class Animal {
     void sound() {
@@ -102,7 +97,7 @@ public class Main {
     }
 }
 
----->>>>Abstraction -
+**---->>>>Abstraction -**
 Abstraction ka matlab hai kisi bhi cheez ki complex details ko chhupana aur sirf zaroori functionalities ko dikhana. Iska main purpose hota hai cheezon ko simple aur user-friendly banana, taaki user sirf essential information pe focus kare bina kisi extra complexity ke.
 
 abstract classes aur abstract methods abstraction ka hissa hote hain. Java mein abstraction ko achieve karne ke liye in dono ka use kiya jaata hai.
@@ -120,14 +115,14 @@ Abstract method ek aisa method hai jo sirf declare kiya jata hai, iska koi body 
 Abstract methods ko implement karna subclasses ki responsibility hoti hai.
 Iska fayda yeh hai ki subclasses apne specific tarike se abstract methods ko implement kar sakte hain.
 
-Example- 
+Example-
 abstract class Animal { // Abstract class
-   
+
     abstract void makeSound();// Abstract method
 }
 class Cat extends Animal {
 
-	@Override
+    @Override
 	void makeSound() {
 		System.out.println("Cat meows");
 	}
@@ -137,7 +132,7 @@ class Cat extends Animal {
 }
 class Dog extends Animal {
 
-	@Override
+    @Override
 	void makeSound() {
 		System.out.println("Dog Barks");
 	}
@@ -149,31 +144,31 @@ public class MainClass {
 		Animal myDog = new Dog(); // Dog object
 		myDog.makeSound(); // o/p- Dog barks
 
-		Animal myCat = new Cat(); // Cat object
+    Animal myCat = new Cat(); // Cat object
 		myCat.makeSound(); // o/p- Cat meows
 //		Cat c = new Cat();
 //		c.purr(); //o/p Cat purrs
 		// myCat.purr(); //error cannot find symbol purr
 
-	}
+    }
 }
 
----->>Encapsulation-
+**---->>Encapsulation-**
 
 Encapsulation ek Object-Oriented Programming (OOP) ka concept hai jisme data (variables) aur methods (functions) ko ek single unit ke roop mein bundle kiya jata hai. Iska main purpose data ko unauthorized access se bachana hai.
 
 Encapsulation mein data hiding kiya jata hai, yani data ko directly access karne ke bajaye, hum getter aur setter methods ka use karte hain.
 
-example- 
+example-
 
 public class Person {
 	private String name;
 
-	public String getName() {
+    public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+    public void setName(String name) {
 		this.name = name;
 	}
 
@@ -183,10 +178,9 @@ public class MainClass {
 		Person person = new Person();
 		person.setName("Tom");
 
-		System.out.println("Person's Name: " + person.getName());
+    System.out.println("Person's Name: " + person.getName());
 	}
 }
-
 
 What is an Interface?
 
@@ -199,7 +193,7 @@ package example;
 interface Animal {
 	void sound(); // Abstract method
 
-	default void sleep() { 
+    default void sleep() {
 		System.out.println("Animal is sleeping.");
 	}
 }
@@ -223,7 +217,6 @@ Dog barks
 Animal is sleeping.
 
 ->Boxing, Unboxing, Auto-boxing, and Auto-unboxing are all parts of Wrapper Classes in Java.
-
 
 1. Boxing(explicit boxing)
 
@@ -257,7 +250,7 @@ Manually converting a wrapper object to its corresponding primitive type using m
 Example (Manual Unboxing):
 
 Integer wrapperNum = Integer.valueOf(100);
-int unboxedNum = wrapperNum.intValue(); // Manual 
+int unboxedNum = wrapperNum.intValue(); // Manual
 
 You explicitly call a method like intValue() to perform the conversion.
 This was the standard way before Auto-unboxing was introduced in Java 5
@@ -267,7 +260,6 @@ This was the standard way before Auto-unboxing was introduced in Java 5
 Automatically converting a wrapper object to its corresponding primitive type. The compiler performs this conversion behind the scenes.
 
 Example (Auto-unboxing):
-
 
 Integer wrapperNum = 200; // Autoboxing
 int autoUnboxedNum = wrapperNum; // Auto-unboxing
@@ -316,19 +308,19 @@ package example;
 public class WrapperClassExample {
 	public static void main(String[] args) {
 
-		Float floatValue = 10.5f;
+    Float floatValue = 10.5f;
 		System.out.println("Float Value: " + floatValue);
 		System.out.println("byte value: " + floatValue.byteValue());
 
-		Double doubleValue = 20.123;
+    Double doubleValue = 20.123;
 		System.out.println("\nDouble Value: " + doubleValue);
 		System.out.println("value: " + doubleValue.intValue());
 
-		Boolean booleanValue = true;
+    Boolean booleanValue = true;
 		System.out.println("\nBoolean Value: " + booleanValue);
 		System.out.println("Value -- " + Boolean.toString(false));
 
-		Character charValue = 'A';
+    Character charValue = 'A';
 		System.out.println("\nCharacter Value: " + charValue);
 		System.out.println("To Lowercase: " + Character.toLowerCase(charValue));
 	}
@@ -367,27 +359,27 @@ Wrapper Class Example:
 
 public class WrapperClassExample {
     public static void main(String[] args) {
-        
-        // Auto-boxing (primitive to wrapper)
+
+    // Auto-boxing (primitive to wrapper)
         int num = 10;
         Integer wrapperNum = num;  // Auto-boxing
         System.out.println("Auto-boxed Integer: " + wrapperNum);
-        
-        // Auto-unboxing (wrapper to primitive)
+
+    // Auto-unboxing (wrapper to primitive)
         Integer wrapperInt = 20;
         int primitiveInt = wrapperInt;  // Auto-unboxing
         System.out.println("Auto-unboxed int: " + primitiveInt);
-        
-        // Wrapper class methods
+
+    // Wrapper class methods
         Integer val = 100;
         System.out.println("Value as String: " + val.toString());  // Integer to String
-        
-        // Convert String to integer
+
+    // Convert String to integer
         String str = "200";
         int convertedValue = Integer.parseInt(str);
         System.out.println("Converted String to int: " + convertedValue);
-        
-        // Getting max value of integer
+
+    // Getting max value of integer
         System.out.println("Max value of Integer: " + Integer.MAX_VALUE);
     }
 }
@@ -468,7 +460,6 @@ protected void finalize() throws Throwable {
     super.finalize();
 }
 
-
 -->>Why there is a list / set / map interface in collection hierarchy?
 
 List, Set, aur Map interfaces collection hierarchy ka part isliye hain kyunki yeh abstraction aur standardization provide karte hain:
@@ -482,7 +473,6 @@ Standardization: Yeh interfaces ek set of common methods provide karte hain (jai
 ->Interfaces flexibility dete hain, taki different implementations jaise ArrayList, HashSet, ya HashMap use ki ja sake without changing code.
 ->Common behavior define karne ke liye interfaces ka use hota hai, jo alag-alag implementations mein reusability aur maintenance improve karta hai.
 ->Yeh abstraction ensure karta hai ki kya karna hai define ho, aur implementations decide karein ki kaise karna hai.
-
 
 -->Comparator aur Comparable kya hai?
 Comparator aur Comparable dono Java interfaces hain jo objects ko sort karne ke liye use hote hain, lekin inka istemal aur kaam karne ka tarika alag hota hai.
@@ -500,7 +490,7 @@ Kaise use karte hain?
 compareTo() method define karke sorting logic likhte hain.
 Example:
 
-public class Student implements Comparable<Student> {
+public class Student implements Comparable`<Student>` {
     int id;
     String name;
 
@@ -530,7 +520,7 @@ Example:
 
 import java.util.Comparator;
 
-public class NameComparator implements Comparator<Student> {
+public class NameComparator implements Comparator`<Student>` {
     @Override
     public int compare(Student s1, Student s2) {
         return s1.name.compareTo(s2.name); // Name ke basis par sort karega
@@ -541,13 +531,12 @@ Kab use kare?
 Comparable: Jab ek fixed natural order chahiye ho.
 Comparator: Jab alag-alag sorting criteria chahiye ho, ya existing class ko modify nahi kar sakte.
 
+--->>Why there is a list / set / map interface in collection hierarchy ?
 
---->>Why there is a list / set / map interface in collection hierarchy ? 
-
-List, Set, aur Map interfaces Collection hierarchy mein isliye hain, taaki hum apne data ko alag-alag tariko se store aur manage kar sakein. 
-List sequence aur duplicates allow karta hai, 
-Set unique elements store karta hai, 
-aur Map key-value pairs ke roop mein data ko organize karta hai. 
+List, Set, aur Map interfaces Collection hierarchy mein isliye hain, taaki hum apne data ko alag-alag tariko se store aur manage kar sakein.
+List sequence aur duplicates allow karta hai,
+Set unique elements store karta hai,
+aur Map key-value pairs ke roop mein data ko organize karta hai.
 Ye interfaces humein flexibility aur efficiency provide karte hain data ko organize aur access karne mein.
 Ye interfaces humein different use cases ke liye suitable collections choose karne mein madad karte hain.
 
@@ -585,7 +574,7 @@ Iterator: Ye ek object hota hai jo collections mein elements ko traverse karne k
 Example code:
 java
 
-List<String> names = List.of("Alice", "Bob", "Charlie");
+List`<String>` names = List.of("Alice", "Bob", "Charlie");
 
 // For-each loop ka use karke iteration
 for (String name : names) {
@@ -609,13 +598,13 @@ import java.util.Enumeration;
 
 public class EnumerationExample {
     public static void main(String[] args) {
-        Vector<String> vector = new Vector<>();
+        Vector`<String>` vector = new Vector<>();
         vector.add("Apple");
         vector.add("Banana");
         vector.add("Cherry");
 
-        // Enumeration ka use karke iterate karna
-        Enumeration<String> enumeration = vector.elements();
+    // Enumeration ka use karke iterate karna
+        Enumeration`<String>` enumeration = vector.elements();
         while (enumeration.hasMoreElements()) {
             System.out.println(enumeration.nextElement());
         }
@@ -647,7 +636,7 @@ XML Namespaces:
 
 XML namespaces ek tarika hai naam conflicts ko avoid karne ka, jisme same naam wale elements ya attributes ko alag-alag sources se differentiate kiya jata hai. Yeh khas kar un situations mein useful hai jab aap multiple XML documents ya schemas ko combine kar rahe ho.
 
-Namespace kyun use karein?: Jab aap multiple XML documents ke saath kaam kar rahe hote hain jisme common tag names (jaise <title>) hote hain, tab namespaces ensure karte hain ki har element uniquely identify ho.
+Namespace kyun use karein?: Jab aap multiple XML documents ke saath kaam kar rahe hote hain jisme common tag names (jaise `<title>`) hote hain, tab namespaces ensure karte hain ki har element uniquely identify ho.
 Syntax: Namespace ko xmlns attribute ke through define kiya jata hai. Ek namespace usually ek URI (Uniform Resource Identifier) hota hai, lekin yeh zaroori nahi ki web par actual location ko point kare.
 
 Example:
@@ -666,7 +655,7 @@ XML namespaces element name conflicts ko avoid karne mein madad karte hain.
 Namespaces ko xmlns attribute ke through define kiya jata hai aur prefixes use kiye jaate hain elements ko differentiate karne ke liye.
 Simpler terms mein, XML data ko ek structured format mein store karne ka ek tareeka hai, aur XML namespaces ka use hota hai elements ko differentiate karne ke liye jab unka naam same ho lekin wo different sources ya domains se aate hain.
 
---->>Collection Hierarchy 
+--->>Collection Hierarchy
 
 Collection Hierarchy Java mein ek aisi structure hai jo data ko store karne aur manipulate karne ke liye interfaces aur classes ka set define karti hai. Yeh abstraction aur standardization provide karti hai. Collection framework mein kuch important interfaces aur unke implementations hain jo data ko store karte hain.
 
@@ -708,12 +697,12 @@ LinkedHashMap: Yeh insertion order maintain karta hai jab keys ko store karta ha
 -->>Java Collection Framework
 
 1. Collection Framework Overview
-Java Collection Framework ek set of classes aur interfaces hai jo data ko efficiently store aur manipulate karne ke liye use hota hai. Iska use objects ko ek unit me manage karne ke liye kiya jata hai. Jaise List, Set, Queue, aur Map ka use hota hai.
+   Java Collection Framework ek set of classes aur interfaces hai jo data ko efficiently store aur manipulate karne ke liye use hota hai. Iska use objects ko ek unit me manage karne ke liye kiya jata hai. Jaise List, Set, Queue, aur Map ka use hota hai.
 
 Maksad: Data ko store aur retrieve karna asani se, jaise dynamic arrays, linked lists, trees, etc. ka use karke.
 
 2. Legacy Classes
-Ye purane classes hain jo Java me pehle diye gaye the (generics se pehle). Inka use modern development me kam hota hai.
+   Ye purane classes hain jo Java me pehle diye gaye the (generics se pehle). Inka use modern development me kam hota hai.
 
 Vector:
 
@@ -722,7 +711,7 @@ Synchronized hai, isliye slower hota hai baaki lists ke comparison me.
 
 Example:
 
-Vector<String> vector = new Vector<>();
+Vector`<String>` vector = new Vector<>();
 vector.add("Java");
 
 Stack:
@@ -734,7 +723,7 @@ peek(): Top element ko dekhne ke liye bina remove kiye.
 
 Example:
 
-Stack<Integer> stack = new Stack<>();
+Stack`<Integer>` stack = new Stack<>();
 stack.push(10);
 stack.push(20);
 stack.pop(); // 20
@@ -755,8 +744,8 @@ Properties properties = new Properties();
 properties.setProperty("key", "value");
 
 3. Collection Interfaces
-Collection Interface: Ye root interface hai jo Set, List, aur Queue ko inherit karta hai.
-Basic operations define karta hai jaise add(), remove(), size() etc.
+   Collection Interface: Ye root interface hai jo Set, List, aur Queue ko inherit karta hai.
+   Basic operations define karta hai jaise add(), remove(), size() etc.
 
 List Interface
 
@@ -769,14 +758,14 @@ Types:
 ArrayList: Ek resizable array implementation hai. Fast access lekin insertions/deletions slower hoti hain.
 
 Example:
-List<String> list = new ArrayList<>();
+List`<String>` list = new ArrayList<>();
 list.add("Java");
 list.add("Python");
 
 LinkedList: Ek doubly linked list implementation hai. Fast insertion/deletion lekin slow access hota hai.
 
 Example:
-List<String> linkedList = new LinkedList<>();
+List`<String>` linkedList = new LinkedList<>();
 linkedList.add("Java");
 
 Vector: ArrayList jaise hi hai, lekin yeh synchronized hai aur thread-safe hai.
@@ -792,20 +781,20 @@ Types:
 HashSet: Ek hash table based implementation hai. Order maintain nahi karta.
 
 Example:
-Set<String> set = new HashSet<>();
+Set`<String>` set = new HashSet<>();
 set.add("Java");
 set.add("Python");
 
 LinkedHashSet: Ek hash set hai jo insertion order maintain karta hai.
 
 Example:
-Set<String> linkedSet = new LinkedHashSet<>();
+Set`<String>` linkedSet = new LinkedHashSet<>();
 linkedSet.add("Java");
 
 TreeSet: Ek sorted set hai, jo elements ko natural order ya specified comparator ke according sort karta hai.
 
 Example:
-Set<String> treeSet = new TreeSet<>();
+Set`<String>` treeSet = new TreeSet<>();
 treeSet.add("Java");
 
 Map Interface
@@ -849,16 +838,16 @@ Types:
 
 LinkedList: Queue aur List dono ko implement karta hai.
 Example:
-Queue<String> queue = new LinkedList<>();
+Queue`<String>` queue = new LinkedList<>();
 queue.offer("Java");
 
 PriorityQueue: Queue jo elements ko unke natural order ya comparator ke according order karta hai.
 Example:
-Queue<String> priorityQueue = new PriorityQueue<>();
+Queue`<String>` priorityQueue = new PriorityQueue<>();
 priorityQueue.offer("Java");
 
 5. Deque Interface
-Characteristics:
+   Characteristics:
 
 Double-ended queue hai jahan elements ko dono ends se add ya remove kiya ja sakta hai.
 Queue ko extend karta hai aur methods jaise addFirst(), addLast(), removeFirst(), removeLast() support karta hai.
@@ -868,10 +857,10 @@ Types:
 ArrayDeque: Resizable array implementation hai Deque interface ka.
 
 Example:
-Deque<String> deque = new ArrayDeque<>();
+Deque`<String>` deque = new ArrayDeque<>();
 deque.addFirst("Java");
 
-Summary 
+Summary
 List: Ordered collection hai, duplicates allow karta hai (e.g., ArrayList, LinkedList).
 Set: Unordered collection hai, duplicates allow nahi karta (e.g., HashSet, TreeSet).
 Map: Key-value pairs store karta hai, keys unique hote hain (e.g., HashMap, TreeMap).
@@ -898,8 +887,8 @@ which other interfaces are marker interfaces in java?
 Marker interfaces Java mein aise interfaces hote hain jo koi methods ya fields define nahi karte. Yeh sirf classes ko mark karne ke liye use hote hain. Niche kuch common marker interfaces diye gaye hain jo Java mein frequently use hote hain:
 
 1. Serializable
-Purpose: Class ko serialize (convert into a byte stream) karne ke liye.
-Location: java.io package.
+   Purpose: Class ko serialize (convert into a byte stream) karne ke liye.
+   Location: java.io package.
 
 Example:
 
@@ -910,8 +899,8 @@ public class MyClass implements Serializable {
 Agar koi class Serializable interface ko implement karti hai, to JVM usse easily serialize aur deserialize kar sakti hai.
 
 2. Cloneable
-Purpose: Class ko clone karne ki permission dene ke liye.
-Location: java.lang package.
+   Purpose: Class ko clone karne ki permission dene ke liye.
+   Location: java.lang package.
 
 Example:
 
@@ -924,8 +913,8 @@ public class MyClass implements Cloneable {
 Agar class Cloneable ko implement nahi karti, to clone() method CloneNotSupportedException throw karega.
 
 3. Remote
-Purpose: RMI (Remote Method Invocation) ke liye class ko eligible banata hai.
-Location: java.rmi package.
+   Purpose: RMI (Remote Method Invocation) ke liye class ko eligible banata hai.
+   Location: java.rmi package.
 
 Example:
 
@@ -935,18 +924,17 @@ public interface MyRemoteService extends Remote {
 Remote interface batata hai ki is class ka object remotely access kiya ja sakta hai.
 
 4. EventListener
-Purpose: Class ko event listener banata hai.
-Location: java.util package.
-Example:
-public class MyEventListener implements EventListener {
-    // Custom event handling logic
-}
-Yeh GUI frameworks aur event-driven programming mein kaam aata hai.
-
+   Purpose: Class ko event listener banata hai.
+   Location: java.util package.
+   Example:
+   public class MyEventListener implements EventListener {
+   // Custom event handling logic
+   }
+   Yeh GUI frameworks aur event-driven programming mein kaam aata hai.
 5. SingleThreadModel
-Purpose: Servlet ko single-threaded environment mein run karne ke liye mark karta hai.
-Location: javax.servlet package.
-Example:
+   Purpose: Servlet ko single-threaded environment mein run karne ke liye mark karta hai.
+   Location: javax.servlet package.
+   Example:
 
 public class MyServlet implements SingleThreadModel {
     // Servlet logic
@@ -954,9 +942,9 @@ public class MyServlet implements SingleThreadModel {
 Yeh interface ab deprecated hai.
 
 6. RandomAccess
-Purpose: Batata hai ki ek List implementation fast random access ko support karti hai.
-Location: java.util package.
-Example:
+   Purpose: Batata hai ki ek List implementation fast random access ko support karti hai.
+   Location: java.util package.
+   Example:
 
 public class MyList extends ArrayList implements RandomAccess {
     // Custom logic
@@ -964,9 +952,9 @@ public class MyList extends ArrayList implements RandomAccess {
 ArrayList jese classes yeh implement karti hain.
 
 7. Deprecated Marker Interfaces
-SingleThreadModel ab deprecated hai, lekin ek marker interface ka example hai.
-Hindi Mein Summary
-Marker interfaces koi methods define nahi karte par classes ko special behavior dene ke liye use hote hain. Jaise:
+   SingleThreadModel ab deprecated hai, lekin ek marker interface ka example hai.
+   Hindi Mein Summary
+   Marker interfaces koi methods define nahi karte par classes ko special behavior dene ke liye use hote hain. Jaise:
 
 Serializable - Serialization ke liye.
 Cloneable - Clone karne ke liye.
@@ -989,7 +977,7 @@ Output Stream: Data ko write karne ke liye use hota hai.
 Example: File me data write karna.
 
 2. Streams ka Hierarchy (Tree Structure)
-Java Streams do categories me divide hote hain:
+   Java Streams do categories me divide hote hain:
 
 (a) Byte Streams
 Yeh byte-by-byte (binary format) data handle karte hain.
@@ -1080,9 +1068,7 @@ t.join(); // Waits for thread to finish execution
 
 Thread Life Cycle Diagram(State-transistion diagram)
 
-
-
-           +------------------+
+    +------------------+
            |      New         |---------+
            | (Thread Created) |         |
            +------------------+         |
@@ -1117,7 +1103,6 @@ Thread Life Cycle Diagram(State-transistion diagram)
            |     Runnable      |
            +-------------------+
 
-
 Summary
 Thread Life Cycle Java ke threading model ka ek essential part hai jo define karta hai ki ek thread kis tarah se create, execute, aur terminate hota hai.
 States:
@@ -1127,7 +1112,6 @@ Running: Thread execute ho raha hota hai.
 Waiting/Blocked: Thread kisi condition ya resource ka wait kar raha hota hai.
 Terminated: Thread ka execution complete ho gaya hai.
 Thread life cycle samajhna important hai jab hum multi-threading applications design karte hain, kyunki yeh hume thread behavior aur concurrency problems ko efficiently handle karna sikhata hai.
-
 
 UML(Unified Modeling Language)
 
@@ -1185,38 +1169,3 @@ Agar aapko specific UML diagrams ke baare mein aur detail chahiye ho, to aap poo
 
 1738458080
 18390
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
