@@ -178,5 +178,3 @@ Country: Japan, Capital: Tokyo
 ### Explanation:
 
 * `entrySet().iterator()` se aap HashMap ke saare entries ko iterate karte hain.
-
-In tino methods mein se aapko jo sabse convenient lagta hai, aap usse use kar sakte hain. 😊
