@@ -75,22 +75,22 @@ Downcasting ke baad hum child class ke specific methods ko access kar sakte hain
 
 **Downcasting Example**
 
+```
 class Animal {
     void sound() {
         System.out.println("Animal makes a sound");
     }
-}
-
-class Dog extends Animal {
+}class Dog extends Animal {
     void sound() {
         System.out.println("Dog barks");
-    }
-
-    void fetch() {
+    }    void fetch() {
         System.out.println("Dog fetches the ball");
     }
 }
+```
 
+
+```
 public class Main {
     public static void main(String[] args) {
         Animal animal = new Dog(); // Upcasting
@@ -99,6 +99,7 @@ public class Main {
         dog.fetch(); // Output: Dog fetches the ball
     }
 }
+```
 
 **---->>>>Abstraction -**
 Abstraction ka matlab hai kisi bhi cheez ki complex details ko chhupana aur sirf zaroori functionalities ko dikhana. Iska main purpose hota hai cheezon ko simple aur user-friendly banana, taaki user sirf essential information pe focus kare bina kisi extra complexity ke.
@@ -118,43 +119,47 @@ Abstract method ek aisa method hai jo sirf declare kiya jata hai, iska koi body 
 Abstract methods ko implement karna subclasses ki responsibility hoti hai.
 Iska fayda yeh hai ki subclasses apne specific tarike se abstract methods ko implement kar sakte hain.
 
-Example-
-abstract class Animal { // Abstract class
+**Example-**
 
-    abstract void makeSound();// Abstract method
+```
+abstract class Animal { // Abstract class   
+	 abstract void makeSound();// Abstract method
 }
-class Cat extends Animal {
+```
 
-    @Override
+```
+class Cat extends Animal {
+	@Override
 	void makeSound() {
 		System.out.println("Cat meows");
 	}
 	void purr() {
         System.out.println("Cat purrs");
     }
-}
-class Dog extends Animal {
+```
 
-    @Override
+}
+
+```
+class Dog extends Animal {	@Override
 	void makeSound() {
 		System.out.println("Dog Barks");
-	}
+	}}
+```
 
-}
+```
 public class MainClass {
 	public static void main(String[] args) {
 	//	Animal animal = new Animal(); //error
 		Animal myDog = new Dog(); // Dog object
-		myDog.makeSound(); // o/p- Dog barks
-
-    Animal myCat = new Cat(); // Cat object
+		myDog.makeSound(); // o/p- Dog barks		Animal myCat = new Cat(); // Cat object
 		myCat.makeSound(); // o/p- Cat meows
 //		Cat c = new Cat();
 //		c.purr(); //o/p Cat purrs
-		// myCat.purr(); //error cannot find symbol purr
-
-    }
+		// myCat.purr(); //error cannot find symbol purr	}
 }
+```
+
 
 **---->>Encapsulation-**
 
@@ -164,18 +169,19 @@ Encapsulation mein data hiding kiya jata hai, yani data ko directly access karne
 
 example-
 
+```
 public class Person {
 	private String name;
-
-    public String getName() {
+	public String getName() {
 		return name;
 	}
-
-    public void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
-
 }
+```
+
+
 public class MainClass {
 	public static void main(String[] args) {
 		Person person = new Person();
