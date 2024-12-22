@@ -177,4 +177,4 @@ Country: Japan, Capital: Tokyo
 
 ### Explanation:
 
-* `entrySet().iterator()` se aap HashMap ke saare entries ko iterate karte hain.
+* `entrySet().iterator()` se aap HashMap ke saare entries ko iterate karte hain
