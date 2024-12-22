@@ -1,4 +1,4 @@
-**HashMap** ek Java collection class hai jo key-value pairs ko store karti hai. 
+**HashMap** ek Java collection class hai jo key-value pairs ko store karti hai.
 
 Isme hum data ko unique keys ke saath store karte hain, aur har key ko ek value assign karte hain.
 
@@ -58,8 +58,6 @@ HashMap after removal: {India=New Delhi, USA=Washington, D.C.}
 * `remove()` method se hum kisi key ko remove kar sakte hain.
 * `size()` method se HashMap ki size (number of entries) ko jaan sakte hain.
 
-
-
 Agar aapko **HashMap** ke elements ko loop ke through access karna hai, toh aap **for-each loop** ya **Iterator** ka use kar sakte hain. Main dono tarike aapko samjhata hoon.
 
 ### 1. **For-Each Loop (Entry Set)**
@@ -111,7 +109,7 @@ import java.util.HashMap;
 public class HashMapLoopExample {
     public static void main(String[] args) {
         HashMap<String, String> capitalCities = new HashMap<>();
-      
+    
         capitalCities.put("India", "New Delhi");
         capitalCities.put("USA", "Washington, D.C.");
         capitalCities.put("Japan", "Tokyo");
@@ -151,14 +149,14 @@ import java.util.Map;
 public class HashMapLoopExample {
     public static void main(String[] args) {
         HashMap<String, String> capitalCities = new HashMap<>();
-      
+    
         capitalCities.put("India", "New Delhi");
         capitalCities.put("USA", "Washington, D.C.");
         capitalCities.put("Japan", "Tokyo");
-      
+    
         // Using Iterator to loop through HashMap
         Iterator<Map.Entry<String, String>> iterator = capitalCities.entrySet().iterator();
-      
+    
         while (iterator.hasNext()) {
             Map.Entry<String, String> entry = iterator.next();
             System.out.println("Country: " + entry.getKey() + ", Capital: " + entry.getValue());
@@ -177,4 +175,4 @@ Country: Japan, Capital: Tokyo
 
 ### Explanation:
 
-* `entrySet().iterator()` se aap HashMap ke saare entries ko iterate karte hain
+* `entrySet().iterator()` se aap HashMap ke saare entries ko iterate karte hain..
