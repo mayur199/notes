@@ -1,12 +1,16 @@
-Reference: https://chatgpt.com/share/670b6b84-0790-8008-9b89-3c9a797add7d
-https://google.github.io/styleguide/javaguide.html
-https://codingbat.com/java/Warmup-1
-https://www.codecademy.com/resources/cheatsheets/language/java
+## **Reference:** 
 
-**----->>>> Casting**
+* https://chatgpt.com/share/670b6b84-0790-8008-9b89-3c9a797add7d
+* https://google.github.io/styleguide/javaguide.html
+* https://codingbat.com/java/Warmup-1
+* https://www.codecademy.com/resources/cheatsheets/language/java
+
+### **----->>>> Casting**
+
 Casting ka matlab hai kisi variable ko ek data type se dusre data type mein convert karna. Java mein, casting do tarike se hoti hai: implicit casting aur explicit casting.
 
-**----->>>> Implicit Casting**
+### **----->>>> Implicit Casting**
+
 Implicit Casting tab hoti hai jab chhote (smaller) data type ko bade (larger) data type mein convert kiya jata hai.
 
 **Example**:
@@ -28,7 +32,8 @@ System.out.println(y); // Output: 10
 
 Java mein, implicit casting (automatic conversion) aur explicit casting (manual conversion) do tarikon se hoti hai
 
-**--->>>> Upcasting--**
+### **--->>>> Upcasting--**
+
 Upcasting mein hum subclass (child class) ka reference superclass (parent class) ke type mein cast karte hain. Matlab, child class ka object ko parent class ke reference se point karna.
 
 **Key Points:**
@@ -128,7 +133,7 @@ abstract class Animal { // Abstract class
 ```
 
 ```
-class Cat extends Animal {
+	class Cat extends Animal {
 	@Override
 	void makeSound() {
 		System.out.println("Cat meows");
