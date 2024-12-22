@@ -1,9 +1,9 @@
-## **Reference:** 
+## **Reference:**
 
-* https://chatgpt.com/share/670b6b84-0790-8008-9b89-3c9a797add7d
-* https://google.github.io/styleguide/javaguide.html
-* https://codingbat.com/java/Warmup-1
-* https://www.codecademy.com/resources/cheatsheets/language/java
+- https://chatgpt.com/share/670b6b84-0790-8008-9b89-3c9a797add7d
+- https://google.github.io/styleguide/javaguide.html
+- https://codingbat.com/java/Warmup-1
+- https://www.codecademy.com/resources/cheatsheets/language/java
 
 ### **----->>>> Casting**
 
@@ -16,7 +16,7 @@ Implicit Casting tab hoti hai jab chhote (smaller) data type ko bade (larger) da
 **Example**:
 
 int a = 10;
-double b = a;  // Implicit casting from int to double
+double b = a; // Implicit casting from int to double
 System.out.println(b); // Output: 10.0
 
 **----->>>> Explicit Casting**
@@ -58,7 +58,6 @@ class Animal {
 }
 ```
 
-
 ```
 public class Main {
     public static void main(String[] args) {
@@ -69,7 +68,8 @@ public class Main {
 }
 ```
 
-**-->>>Downcasting----**
+### **-->>>Downcasting----**
+
 Downcasting mein hum superclass (parent class) ke reference ko subclass (child class) ke type mein cast karte hain. Matlab, parent class ka reference ko child class ke reference ke jaisa treat karna.
 
 Key Points:
@@ -94,7 +94,6 @@ class Animal {
 }
 ```
 
-
 ```
 public class Main {
     public static void main(String[] args) {
@@ -106,7 +105,8 @@ public class Main {
 }
 ```
 
-**---->>>>Abstraction -**
+### **---->>>>Abstraction -**
+
 Abstraction ka matlab hai kisi bhi cheez ki complex details ko chhupana aur sirf zaroori functionalities ko dikhana. Iska main purpose hota hai cheezon ko simple aur user-friendly banana, taaki user sirf essential information pe focus kare bina kisi extra complexity ke.
 
 abstract classes aur abstract methods abstraction ka hissa hote hain. Java mein abstraction ko achieve karne ke liye in dono ka use kiya jaata hai.
@@ -118,7 +118,7 @@ Abstract class ek aisi class hai jo kisi specific implementation ko hide karti h
 Isme abstract methods ho sakte hain (jo methods declare hote hain par define nahi hote).
 Abstract classes ka main purpose hota hai common structure define karna, jo subclasses me implement hoga.
 
-Abstract Methods:
+**Abstract Methods:**
 
 Abstract method ek aisa method hai jo sirf declare kiya jata hai, iska koi body (implementation) nahi hota.
 Abstract methods ko implement karna subclasses ki responsibility hoti hai.
@@ -127,7 +127,7 @@ Iska fayda yeh hai ki subclasses apne specific tarike se abstract methods ko imp
 **Example-**
 
 ```
-abstract class Animal { // Abstract class   
+abstract class Animal { // Abstract class
 	 abstract void makeSound();// Abstract method
 }
 ```
@@ -165,8 +165,7 @@ public class MainClass {
 }
 ```
 
-
-**---->>Encapsulation-**
+### **---->>Encapsulation-**
 
 Encapsulation ek Object-Oriented Programming (OOP) ka concept hai jisme data (variables) aur methods (functions) ko ek single unit ke roop mein bundle kiya jata hai. Iska main purpose data ko unauthorized access se bachana hai.
 
@@ -186,39 +185,42 @@ public class Person {
 }
 ```
 
-
 public class MainClass {
-	public static void main(String[] args) {
-		Person person = new Person();
-		person.setName("Tom");
+public static void main(String[] args) {
+Person person = new Person();
+person.setName("Tom");
 
     System.out.println("Person's Name: " + person.getName());
-	}
+    }
+
 }
 
-What is an Interface?
+### What is an Interface?
 
 An interface in Java is a blueprint for a class. It is a collection of abstract methods (methods without a body) and static constants. A class implements an interface to provide specific behavior as defined by the interface.
 
-example-
+**example**-
 
+```
 package example;
-
 interface Animal {
 	void sound(); // Abstract method
-
-    default void sleep() {
+	default void sleep() {
 		System.out.println("Animal is sleeping.");
 	}
 }
+```
 
+```
 class Dog implements Animal {
 	@Override
 	public void sound() {
 		System.out.println("Dog barks");
 	}
 }
+```
 
+```
 public class InterfaceExample {
 	public static void main(String[] args) {
 		Animal dog = new Dog();
@@ -226,13 +228,17 @@ public class InterfaceExample {
 		dog.sleep(); // Output: Animal is sleeping.
 	}
 }
-output--
+```
+
+**output--**
 Dog barks
 Animal is sleeping.
 
-->Boxing, Unboxing, Auto-boxing, and Auto-unboxing are all parts of Wrapper Classes in Java.
+### **Wrapper Classes**
 
-1. Boxing(explicit boxing)
+**->Boxing, Unboxing, Auto-boxing, and Auto-unboxing are all parts of Wrapper Classes in Java.**
+
+#### \* Boxing(explicit boxing)
 
 Manually converting a primitive type into its corresponding wrapper object using methods like valueOf().
 
@@ -244,7 +250,7 @@ Integer boxed = Integer.valueOf(primitive); // Boxing
 You explicitly call a method (like valueOf()) to perform the conversion.
 This was the standard way before Autoboxing was introduced in Java 5
 
-2. Autoboxing(implicit boxing)
+#### \* Autoboxing(implicit boxing)
 
 Definition:
 Automatically converting a primitive type into its corresponding wrapper object. The compiler performs this conversion behind the scenes.
@@ -257,7 +263,7 @@ Integer autoBoxed = primitive; // Autoboxing
 No method call is required; the compiler does the work for you.
 This feature was introduced in Java 5 to simplify coding.
 
-3. Unboxing
+#### \* Unboxing
 
 Manually converting a wrapper object to its corresponding primitive type using methods like .intValue(), .doubleValue(), etc.
 
@@ -269,7 +275,7 @@ int unboxedNum = wrapperNum.intValue(); // Manual
 You explicitly call a method like intValue() to perform the conversion.
 This was the standard way before Auto-unboxing was introduced in Java 5
 
-4. Auto-unboxing
+#### \* Auto-unboxing
 
 Automatically converting a wrapper object to its corresponding primitive type. The compiler performs this conversion behind the scenes.
 
@@ -281,7 +287,7 @@ int autoUnboxedNum = wrapperNum; // Auto-unboxing
 No method call is required; the compiler does the work for you.
 This feature was introduced in Java 5 to simplify coding.
 
---->>Wrapper Class in Java
+### **--->>Wrapper Class in Java**
 
 Wrapper classes Java mein primitive data types (int, char, float, etc.) ko objects mein convert karne ke liye use kiye jate hain. Java mein har primitive type ka ek corresponding wrapper class hota hai. Wrapper classes ko use karne se hum primitive types ko objects ke roop mein treat kar sakte hain.
 
@@ -320,24 +326,25 @@ Example -----
 package example;
 
 public class WrapperClassExample {
-	public static void main(String[] args) {
+public static void main(String[] args) {
 
     Float floatValue = 10.5f;
-		System.out.println("Float Value: " + floatValue);
-		System.out.println("byte value: " + floatValue.byteValue());
+    	System.out.println("Float Value: " + floatValue);
+    	System.out.println("byte value: " + floatValue.byteValue());
 
     Double doubleValue = 20.123;
-		System.out.println("\nDouble Value: " + doubleValue);
-		System.out.println("value: " + doubleValue.intValue());
+    	System.out.println("\nDouble Value: " + doubleValue);
+    	System.out.println("value: " + doubleValue.intValue());
 
     Boolean booleanValue = true;
-		System.out.println("\nBoolean Value: " + booleanValue);
-		System.out.println("Value -- " + Boolean.toString(false));
+    	System.out.println("\nBoolean Value: " + booleanValue);
+    	System.out.println("Value -- " + Boolean.toString(false));
 
     Character charValue = 'A';
-		System.out.println("\nCharacter Value: " + charValue);
-		System.out.println("To Lowercase: " + Character.toLowerCase(charValue));
-	}
+    	System.out.println("\nCharacter Value: " + charValue);
+    	System.out.println("To Lowercase: " + Character.toLowerCase(charValue));
+    }
+
 }
 output--
 
@@ -372,7 +379,7 @@ Example: Integer integerObj = 5; int i = integerObj;
 Wrapper Class Example:
 
 public class WrapperClassExample {
-    public static void main(String[] args) {
+public static void main(String[] args) {
 
     // Auto-boxing (primitive to wrapper)
         int num = 10;
@@ -396,6 +403,7 @@ public class WrapperClassExample {
     // Getting max value of integer
         System.out.println("Max value of Integer: " + Integer.MAX_VALUE);
     }
+
 }
 
 output--
@@ -433,14 +441,14 @@ x = 20; // Error: Cannot assign a value to a final variable
 Final Method: A final method cannot be overridden by subclasses.
 
 class A {
-    public final void display() {
-        System.out.println("This is a final method.");
-    }
+public final void display() {
+System.out.println("This is a final method.");
+}
 }
 Final Class: A final class cannot be subclassed.
 
 final class B {
-    // No other class can inherit from B
+// No other class can inherit from B
 }
 
 --->>>finally
@@ -449,11 +457,11 @@ Usage:
 It always executes after the try-catch block, even if an exception is thrown or caught.
 example-
 try {
-    int result = 10 / 0;
+int result = 10 / 0;
 } catch (ArithmeticException e) {
-    System.out.println("Caught an exception.");
+System.out.println("Caught an exception.");
 } finally {
-    System.out.println("This will always be executed.");
+System.out.println("This will always be executed.");
 }
 Output:
 
@@ -469,9 +477,9 @@ example-
 
 @Override
 protected void finalize() throws Throwable {
-    // Code to release resources before object is destroyed
-    System.out.println("Finalizing object.");
-    super.finalize();
+// Code to release resources before object is destroyed
+System.out.println("Finalizing object.");
+super.finalize();
 }
 
 -->>Why there is a list / set / map interface in collection hierarchy?
@@ -505,8 +513,8 @@ compareTo() method define karke sorting logic likhte hain.
 Example:
 
 public class Student implements Comparable`<Student>` {
-    int id;
-    String name;
+int id;
+String name;
 
     public Student(int id, String name) {
         this.id = id;
@@ -517,6 +525,7 @@ public class Student implements Comparable`<Student>` {
     public int compareTo(Student s) {
         return this.id - s.id; // ID ke basis par sort karega
     }
+
 }
 
 Comparator:
@@ -535,10 +544,10 @@ Example:
 import java.util.Comparator;
 
 public class NameComparator implements Comparator`<Student>` {
-    @Override
-    public int compare(Student s1, Student s2) {
-        return s1.name.compareTo(s2.name); // Name ke basis par sort karega
-    }
+@Override
+public int compare(Student s1, Student s2) {
+return s1.name.compareTo(s2.name); // Name ke basis par sort karega
+}
 }
 
 Kab use kare?
@@ -592,7 +601,7 @@ List`<String>` names = List.of("Alice", "Bob", "Charlie");
 
 // For-each loop ka use karke iteration
 for (String name : names) {
-    System.out.println(name);
+System.out.println(name);
 }
 Iteration ka use tab hota hai jab humein multiple elements pe same action perform karna ho.
 
@@ -611,11 +620,11 @@ import java.util.Vector;
 import java.util.Enumeration;
 
 public class EnumerationExample {
-    public static void main(String[] args) {
-        Vector`<String>` vector = new Vector<>();
-        vector.add("Apple");
-        vector.add("Banana");
-        vector.add("Cherry");
+public static void main(String[] args) {
+Vector`<String>` vector = new Vector<>();
+vector.add("Apple");
+vector.add("Banana");
+vector.add("Cherry");
 
     // Enumeration ka use karke iterate karna
         Enumeration`<String>` enumeration = vector.elements();
@@ -623,6 +632,7 @@ public class EnumerationExample {
             System.out.println(enumeration.nextElement());
         }
     }
+
 }
 Summary:
 Enumeration ka use collection ke elements ko access karne ke liye hota hai.
@@ -884,7 +894,7 @@ Java Collection Framework data ko efficiently store aur manipulate karne ke liye
 
 I/O Streams
 
-Serialization- process of converting a java object into a sequence of bytes so that it can be saved to file  , sent over a network or stored in a data base
+Serialization- process of converting a java object into a sequence of bytes so that it can be saved to file , sent over a network or stored in a data base
 
 marker interfaces
 
@@ -907,8 +917,8 @@ Marker interfaces Java mein aise interfaces hote hain jo koi methods ya fields d
 Example:
 
 public class MyClass implements Serializable {
-    private int id;
-    private String name;
+private int id;
+private String name;
 }
 Agar koi class Serializable interface ko implement karti hai, to JVM usse easily serialize aur deserialize kar sakti hai.
 
@@ -919,10 +929,10 @@ Agar koi class Serializable interface ko implement karti hai, to JVM usse easily
 Example:
 
 public class MyClass implements Cloneable {
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
+@Override
+protected Object clone() throws CloneNotSupportedException {
+return super.clone();
+}
 }
 Agar class Cloneable ko implement nahi karti, to clone() method CloneNotSupportedException throw karega.
 
@@ -933,7 +943,7 @@ Agar class Cloneable ko implement nahi karti, to clone() method CloneNotSupporte
 Example:
 
 public interface MyRemoteService extends Remote {
-    void performTask() throws RemoteException;
+void performTask() throws RemoteException;
 }
 Remote interface batata hai ki is class ka object remotely access kiya ja sakta hai.
 
@@ -951,7 +961,7 @@ Remote interface batata hai ki is class ka object remotely access kiya ja sakta 
    Example:
 
 public class MyServlet implements SingleThreadModel {
-    // Servlet logic
+// Servlet logic
 }
 Yeh interface ab deprecated hai.
 
@@ -961,7 +971,7 @@ Yeh interface ab deprecated hai.
    Example:
 
 public class MyList extends ArrayList implements RandomAccess {
-    // Custom logic
+// Custom logic
 }
 ArrayList jese classes yeh implement karti hain.
 
