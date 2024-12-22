@@ -20,9 +20,11 @@ Explicit Casting tab hoti hai jab bade (larger) data type ko chhote (smaller) da
 
 Example:
 
+```
 double x = 10.5;
 int y = (int) x;  // Explicit casting from double to int
 System.out.println(y); // Output: 10
+```
 
 Java mein, implicit casting (automatic conversion) aur explicit casting (manual conversion) do tarikon se hoti hai
 
@@ -37,22 +39,22 @@ Yeh mainly polymorphism achieve karne ke liye useful hai.
 
 **Upcasting Example**
 
+```
 class Animal {
     void sound() {
         System.out.println("Animal makes a sound");
     }
-}
-
-class Dog extends Animal {
+}class Dog extends Animal {
     void sound() {
         System.out.println("Dog barks");
-    }
-
-    void fetch() {
+    }    void fetch() {
         System.out.println("Dog fetches the ball");
     }
 }
+```
 
+
+```
 public class Main {
     public static void main(String[] args) {
         Animal animal = new Dog(); // Upcasting
@@ -60,6 +62,7 @@ public class Main {
         // animal.fetch(); // Error: fetch() is not defined in Animal
     }
 }
+```
 
 **-->>>Downcasting----**
 Downcasting mein hum superclass (parent class) ke reference ko subclass (child class) ke type mein cast karte hain. Matlab, parent class ka reference ko child class ke reference ke jaisa treat karna.
