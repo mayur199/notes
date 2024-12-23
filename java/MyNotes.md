@@ -1191,5 +1191,93 @@ UML ek powerful tool hai jo software development mein planning, designing, aur c
 
 Agar aapko specific UML diagrams ke baare mein aur detail chahiye ho, to aap pooch sakte hain!
 
-1738458080
-18390
+Threads.sleep()
+
+Thread.sleep() ek method hai jo thread ko temporarily stop ya pause kar deta hai kuch specified milliseconds ke liye. Iska matlab hai ki thread apna kaam temporarily suspend karega, aur system ko dusre threads ya tasks handle karne ka mauka milega.
+
+Thread.sleep() ka use kaise hota hai?
+Agar aapko ek thread ko delay karna ho kuch waqt ke liye, to aap Thread.sleep(milliseconds) method ka use kar sakte ho.
+
+Features of Thread.sleep():
+Pause Duration:
+
+Aap jitna time denge (milliseconds mein), thread utne waqt ke liye pause karega.
+InterruptedException:
+
+Agar thread ko pause ke dauran interrupt kiya jaye, to InterruptedException throw hoti hai.
+Thread-safe nahi hai:
+
+sleep() method thread-specific hai aur dusre threads ko directly affect nahi karta.
+Example Code:
+java
+Copy code
+package threads;
+
+public class ThreadSleepExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new Task(), "ThreadOne");
+        Thread t2 = new Thread(new Task(), "ThreadTwo");
+
+    t1.start();
+        t2.start();
+    }
+}
+
+class Task implements Runnable {
+    @Override
+    public void run() {
+        String threadName = Thread.currentThread().getName();
+        System.out.println(threadName + " started");
+
+    try {
+            // Thread ko 3 seconds ke liye sleep karte hain
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            System.out.println(threadName + " was interrupted");
+        }
+
+    System.out.println(threadName + " finished after sleeping for 3 seconds");
+    }
+}
+Output:
+Copy code
+ThreadOne started
+ThreadTwo started
+ThreadOne finished after sleeping for 3 seconds
+ThreadTwo finished after sleeping for 3 seconds
+
+Thread.sleep() ka use tab hota hai jab hume kisi thread ko time-based delay dena ho.
+Agar aapke program mein kuch background threads kaam kar rahe hain aur aapko ek thread temporarily pause karna ho, to Thread.sleep() ek simple aur effective option hai.
+Important Points:
+Sleep ke baad thread resume hota hai wahi se jahan se wo chhoda tha.
+Isse CPU dusre threads ko process karne ka chance deta hai.
+Use Case: Jab hume kisi kaam ke beech me time gap chahiye (e.g., timer ya delay).
+
+Synchronized Statement in Threads (Hinenglish me):
+
+Java me synchronized keyword ka use multiple threads ke beech shared resources ko control karne ke liye hota hai. Ye ensure karta hai ki ek waqt me sirf ek thread hi synchronized code ko access kar sake, jiski wajah se data corruption aur race condition jaise problems avoid hote hain.
+
+Synchronized Statement Types
+Method-Level Synchronization: Pura method synchronize hota hai.
+Block-Level Synchronization: Sirf ek specific code block ko synchronize karte hain.
+
+join
+Thread ka join() method use hota hai ek thread ko wait karwane ke liye jab tak dusra thread apna execution complete na kare. Ye synchronization ka ek tariqa hai jo ensure karta hai ki ek thread dusre thread ke complete hone ka wait kare.
+
+Thread join() Explanation:
+Jab ek thread join() call karta hai kisi dusre thread par, toh wo tab tak ruk jata hai jab tak dusra thread khatam na ho.
+Example: Agar t1.join() call hota hai, toh current thread t1 ke complete hone ka wait karega.
+
+Command Line Arguments in Detail (Hinglish)
+Command line arguments ek tarike ke inputs hote hain jo hum program ko directly terminal ya command prompt se run karte waqt dete hain. Ye inputs program ko dynamic banate hain, kyunki hume inputs ko program ke andar hard-code karne ki zarurat nahi hoti.
+
+Features of Command Line Arguments:
+Runtime Input: Inputs ko program run karte time pass kiya ja sakta hai.
+Dynamic Behavior: Program har baar naye inputs ke sath alag output de sakta hai.
+String Format: Sare arguments String format me hote hain, chahe number ho ya text.
+Position-based Access: Arguments args[0], args[1], etc., ke through access hote hain.
+
+Advantages of Command Line Arguments:
+Flexibility: Same program ko different inputs ke sath run kar sakte hain.
+No Hardcoding: Inputs ko program ke andar define karne ki zarurat nahi hoti.
+Automation Friendly: Scripts aur tools ke sath easily integrate ho sakta hai.
