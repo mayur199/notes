@@ -1417,4 +1417,4 @@ Agar aapke paas ek school hai aur uska data manage karna hai (students, teachers
 
 ### **Conclusion:**
 
-## RDBMS ek efficient tarika hai structured data ko handle karne ke liye. Iske through aap apne applications ke liye robust aur scalable database system bana sakte hain. SQL seekhna RDBMS me kaam karne ke liye essential hai.
+RDBMS ek efficient tarika hai structured data ko handle karne ke liye. Iske through aap apne applications ke liye robust aur scalable database system bana sakte hain. SQL seekhna RDBMS me kaam karne ke liye essential hai.
