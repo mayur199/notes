@@ -1,6 +1,6 @@
 **Deep Copy** aur **Shallow Copy** do tarike hain kisi object ko duplicate karne ke liye. Dono ka kaam object ke ek duplicate banane ka hota hai, lekin inka behavior memory aur references ke perspective se alag hota hai.
 
-### **Shallow Copy**
+### **1.Shallow Copy**
 
 ```plaintext
 Original Person:
@@ -20,11 +20,6 @@ Person1 Address: Delhi
 Person2 Address: Delhi
 ```
 
----
-
-
-
-### **1. Shallow Copy**
 
 * **Shallow Copy** mein object ka ek naya reference banaya jata hai, lekin original object ke nested objects ya complex data structures (e.g., arrays, lists) ka reference copy hota hai.
 * Iska matlab hai ki agar nested object ko modify kiya jaye, toh dono objects mein change dikhai dega.
