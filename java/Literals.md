@@ -141,5 +141,3 @@ Chaliye Java mein available different types of literals ko samajhte hain in  **H
 * **Literals** wo fixed values hain jo Java mein variables ko assign ki ja sakti hain.
 * **Types** : Integer, Floating-point, Character, String, Boolean, Null.
 * **Special Features** : Underscores, Binary/Octal/Hexadecimal formats.
-
-Agar kisi point mein confusion ho ya aur examples chahiye, toh batao! 😊
