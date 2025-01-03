@@ -1,5 +1,5 @@
 
-#### **Java Literals**
+#### Java Literals
 
 **Java Literals** simple values hote hain jo code mein directly represent kiye jaate hain. Ye fixed values hote hain jo program mein variables ko assign ki jati hain.
 
