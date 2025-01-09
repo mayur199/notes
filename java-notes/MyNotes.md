@@ -1,4 +1,4 @@
-## **Reference:** 
+## **Reference:**
 
 * https://chatgpt.com/c/6767f2b7-547c-8008-a107-0b5f52551a32
 * https://google.github.io/styleguide/javaguide.html
@@ -58,7 +58,6 @@ class Animal {
 }
 ```
 
-
 ```
 public class Main {
     public static void main(String[] args) {
@@ -94,7 +93,6 @@ class Animal {
     }
 }
 ```
-
 
 ```
 public class Main {
@@ -167,7 +165,6 @@ public class MainClass {
 }
 ```
 
-
 ### **---->>Encapsulation-**
 
 Encapsulation ek Object-Oriented Programming (OOP) ka concept hai jisme data (variables) aur methods (functions) ko ek single unit ke roop mein bundle kiya jata hai. Iska main purpose data ko unauthorized access se bachana hai.
@@ -187,7 +184,6 @@ public class Person {
 	}
 }
 ```
-
 
 public class MainClass {
 	public static void main(String[] args) {
@@ -213,7 +209,6 @@ interface Animal {
 	}
 }
 ```
-
 
 ```
 class Dog implements Animal {
@@ -514,7 +509,7 @@ Kaise use karte hain?
 compareTo() method define karke sorting logic likhte hain.
 Example:
 
-public class Student implements Comparable`<Student>` {
+public class Student implements Comparable `<Student>` {
     int id;
     String name;
 
@@ -544,7 +539,7 @@ Example:
 
 import java.util.Comparator;
 
-public class NameComparator implements Comparator`<Student>` {
+public class NameComparator implements Comparator `<Student>` {
     @Override
     public int compare(Student s1, Student s2) {
         return s1.name.compareTo(s2.name); // Name ke basis par sort karega
@@ -598,7 +593,7 @@ Iterator: Ye ek object hota hai jo collections mein elements ko traverse karne k
 Example code:
 java
 
-List`<String>` names = List.of("Alice", "Bob", "Charlie");
+List `<String>` names = List.of("Alice", "Bob", "Charlie");
 
 // For-each loop ka use karke iteration
 for (String name : names) {
@@ -622,7 +617,7 @@ import java.util.Enumeration;
 
 public class EnumerationExample {
     public static void main(String[] args) {
-        Vector`<String>` vector = new Vector<>();
+        Vector `<String>` vector = new Vector<>();
         vector.add("Apple");
         vector.add("Banana");
         vector.add("Cherry");
@@ -735,7 +730,7 @@ Synchronized hai, isliye slower hota hai baaki lists ke comparison me.
 
 Example:
 
-Vector`<String>` vector = new Vector<>();
+Vector `<String>` vector = new Vector<>();
 vector.add("Java");
 
 Stack:
@@ -747,7 +742,7 @@ peek(): Top element ko dekhne ke liye bina remove kiye.
 
 Example:
 
-Stack`<Integer>` stack = new Stack<>();
+Stack `<Integer>` stack = new Stack<>();
 stack.push(10);
 stack.push(20);
 stack.pop(); // 20
@@ -782,14 +777,14 @@ Types:
 ArrayList: Ek resizable array implementation hai. Fast access lekin insertions/deletions slower hoti hain.
 
 Example:
-List`<String>` list = new ArrayList<>();
+List `<String>` list = new ArrayList<>();
 list.add("Java");
 list.add("Python");
 
 LinkedList: Ek doubly linked list implementation hai. Fast insertion/deletion lekin slow access hota hai.
 
 Example:
-List`<String>` linkedList = new LinkedList<>();
+List `<String>` linkedList = new LinkedList<>();
 linkedList.add("Java");
 
 Vector: ArrayList jaise hi hai, lekin yeh synchronized hai aur thread-safe hai.
@@ -805,20 +800,20 @@ Types:
 HashSet: Ek hash table based implementation hai. Order maintain nahi karta.
 
 Example:
-Set`<String>` set = new HashSet<>();
+Set `<String>` set = new HashSet<>();
 set.add("Java");
 set.add("Python");
 
 LinkedHashSet: Ek hash set hai jo insertion order maintain karta hai.
 
 Example:
-Set`<String>` linkedSet = new LinkedHashSet<>();
+Set `<String>` linkedSet = new LinkedHashSet<>();
 linkedSet.add("Java");
 
 TreeSet: Ek sorted set hai, jo elements ko natural order ya specified comparator ke according sort karta hai.
 
 Example:
-Set`<String>` treeSet = new TreeSet<>();
+Set `<String>` treeSet = new TreeSet<>();
 treeSet.add("Java");
 
 Map Interface
@@ -862,12 +857,12 @@ Types:
 
 LinkedList: Queue aur List dono ko implement karta hai.
 Example:
-Queue`<String>` queue = new LinkedList<>();
+Queue `<String>` queue = new LinkedList<>();
 queue.offer("Java");
 
 PriorityQueue: Queue jo elements ko unke natural order ya comparator ke according order karta hai.
 Example:
-Queue`<String>` priorityQueue = new PriorityQueue<>();
+Queue `<String>` priorityQueue = new PriorityQueue<>();
 priorityQueue.offer("Java");
 
 5. Deque Interface
@@ -881,7 +876,7 @@ Types:
 ArrayDeque: Resizable array implementation hai Deque interface ka.
 
 Example:
-Deque`<String>` deque = new ArrayDeque<>();
+Deque `<String>` deque = new ArrayDeque<>();
 deque.addFirst("Java");
 
 Summary
@@ -1281,7 +1276,6 @@ Advantages of Command Line Arguments:
 Flexibility: Same program ko different inputs ke sath run kar sakte hain.
 No Hardcoding: Inputs ko program ke andar define karne ki zarurat nahi hoti.
 Automation Friendly: Scripts aur tools ke sath easily integrate ho sakta hai.
-
 
 ### **RDBMS Basics in Hinglish**
 
