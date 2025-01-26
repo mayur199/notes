@@ -112,5 +112,3 @@ Hinglish example:
 1. Agar tum `google.com` type karte ho, toh **DNS protocol** domain name ko IP address mein convert karta hai.
 2. Uske baad **HTTP/HTTPS protocol** page ko load karne ke rules follow karta hai.
 3. Agar tum email bhej rahe ho, toh **SMTP protocol** use hota hai.
-
-Samajh aaya ya aur simplify karun? 😊

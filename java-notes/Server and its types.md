@@ -130,7 +130,3 @@ Servers alag-alag purpose ke liye design hote hain. Yahan common types of server
 | **Proxy Server**       | Security aur content filtering               | Squid Proxy, HAProxy       |
 
 ---
-
-Hinglish mein:
-
-Agar tum ek website access karte ho, toh **web server** HTML files serve karega. Agar us website ka data database mein hai, toh wo data **database server** se aayega. Agar tumhe email bhejna hai, toh **mail server** use hoga. Har server ka apna ek specific kaam hota hai. 😊

@@ -64,5 +64,3 @@
   Example: Tumhari blog website ke liye.
 
 * **Application Server** : Backend processing aur complex business logic handle karta hai.
-
-  Example: E-commerce ya banking apps ke liye. 😊
