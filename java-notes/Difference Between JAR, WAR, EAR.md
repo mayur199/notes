@@ -1,3 +1,4 @@
+
 **JAR file, WAR file, aur EAR file ke beech ka difference samajhne ke liye unka purpose aur usage dekhte hain. Yeh tino files Java application ko package karne ke liye use hoti hain, lekin alag-alag scenarios mein kaam aati hain.**
 
 ---
