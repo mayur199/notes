@@ -28,3 +28,4 @@
 
 * **Localhost** ka matlab hai tumhara  **own computer** . Agar tum `127.0.0.1` ya `localhost` likhte ho, iska matlab hai tum apne system me chal rahe server/application ko access kar rahe ho.
 * **Localhost testing** ke liye hota hai, jaise web apps ko check karna bina internet ke.
+* **127.0.0.1** is the default IP address for localhost
