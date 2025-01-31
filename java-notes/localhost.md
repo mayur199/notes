@@ -1,4 +1,3 @@
-
 **Localhost** ek computer ka default **hostname** hai jo usi system ko refer karta hai jisme application ya service run ho rahi hai. Ye commonly local testing aur development ke liye use hota hai.
 
 ### **Key Points** :
@@ -28,5 +27,4 @@
 ### **Hinglish Explanation** :
 
 * **Localhost** ka matlab hai tumhara  **own computer** . Agar tum `127.0.0.1` ya `localhost` likhte ho, iska matlab hai tum apne system me chal rahe server/application ko access kar rahe ho.
-* **127.0.0.1** is the default IP address for localhost.
 * **Localhost testing** ke liye hota hai, jaise web apps ko check karna bina internet ke.
