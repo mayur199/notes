@@ -1,50 +1,101 @@
-Here’s a breakdown of the HTTP status codes categorized by their series:
 
-### 1.  **200 Series (Successful Responses)** :
+HTTP status codes server ki taraf se responses hote hain jo batate hain ki request ka kya result aaya. Inhe 5 categories me divide kiya gaya hai:
 
-These codes indicate that the request has been successfully processed.
+1. **1xx (Informational) - Sirf Information**
+2. **2xx (Success) - Request Sahi Rahi** ✅
+3. **3xx (Redirection) - Dusre Jagah Redirect Karna** 🔄
+4. **4xx (Client Error) - Client Side Error** ❌
+5. **5xx (Server Error) - Server Side Error** ⚠️
 
-* **200 OK** : The request has been successfully processed, and the server has returned the requested resource.
-* **201 Created** : The request has been fulfilled, resulting in the creation of a new resource.
-* **202 Accepted** : The request has been accepted for processing, but the processing is not complete.
-* **204 No Content** : The request has been successfully processed, but there is no content to return.
-* **206 Partial Content** : The server is delivering only a portion of the resource (used in range requests).
+Chaliye detail me samajhte hain har series ke codes:
 
-### 2.  **300 Series (Redirection)** :
+---
 
-These codes indicate that further action is needed to complete the request, usually a redirection.
+## **🔹 200 Series (Success) - Request Sahi Rahi ✅**
 
-* **301 Moved Permanently** : The resource has been permanently moved to a new URL, and future requests should use this new URL.
-* **302 Found** : The resource has been temporarily moved to a new URL. The client should continue to use the original URL for future requests.
-* **303 See Other** : The client should access the resource at another URL using the GET method.
-* **304 Not Modified** : The resource has not been modified since the last request, so the client can use its cached version.
-* **307 Temporary Redirect** : The request should be repeated to a different URL, but the original URL should be used for future requests.
-* **308 Permanent Redirect** : Similar to 301, but the method used for the request (like POST or GET) should remain the same when redirected.
+Ye codes batate hain ki request successfully complete ho gayi.
 
-### 3.  **400 Series (Client Errors)** :
+| **Code**                              | **Meaning**                                      | **Description**                    |
+| ------------------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
+| **200 OK**                            | Request successfully complete ho gayi                  | Data server se mil gaya                  |
+| **201 Created**                       | Naya resource create ho gaya                           | POST ya PUT request ke liye              |
+| **202 Accepted**                      | Request accept ho gayi, lekin abhi process ho rahi hai | Background process me kaam hoga          |
+| **203 Non-Authoritative Information** | Response modify kiya gaya hai                          | Proxy ya third-party source se aaya data |
+| **204 No Content**                    | Request successful, lekin koi content return nahi hua  | DELETE request ke baad aata hai          |
+| **205 Reset Content**                 | Client ko form ya page reset karna chahiye             | Jaise ek form clear karna                |
+| **206 Partial Content**               | Sirf kuch part ka response bheja gaya hai              | Large files ko chunks me bhejne ke liye  |
 
-These codes indicate that the client has made an error in the request.
+---
 
-* **400 Bad Request** : The server could not understand the request due to malformed syntax.
-* **401 Unauthorized** : The request lacks proper authentication or is unauthorized.
-* **403 Forbidden** : The server understood the request, but it refuses to authorize it.
-* **404 Not Found** : The requested resource could not be found on the server.
-* **405 Method Not Allowed** : The method used in the request (e.g., GET, POST) is not allowed for the resource.
-* **408 Request Timeout** : The server timed out waiting for the request.
-* **409 Conflict** : The request could not be processed due to a conflict with the current state of the resource.
-* **413 Payload Too Large** : The request is too large for the server to process.
-* **415 Unsupported Media Type** : The server cannot process the request due to unsupported media type.
-* **429 Too Many Requests** : The user has sent too many requests in a given amount of time.
+## **🔹 300 Series (Redirection) - Dusre Jagah Redirect Karna 🔄**
 
-### 4.  **500 Series (Server Errors)** :
+Ye codes batate hain ki client ko dusre location par jaana hai.
 
-These codes indicate that the server has encountered an error or is otherwise incapable of performing the request.
+| **Code**                          | **Meaning**                                       | **Description**                                                           |
+| --------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **300 Multiple Choices**          | Multiple options available hain                         | User ko ek option choose karna padega                                           |
+| **301 Moved Permanently**         | Resource permanently move ho gaya                       | Browser ya search engines naye URL ko store kar lete hain                       |
+| **302 Found (Moved Temporarily)** | Resource temporarily move hua hai                       | Temporary redirection, lekin future me wapas aa sakta hai                       |
+| **303 See Other**                 | Response ko ek naye URL par redirect kiya gaya hai      | Mostly POST ke baad GET request ke liye                                         |
+| **304 Not Modified**              | Cache se old data use karo                              | Server bata raha hai ki resource same hi hai, isliye naye data ki zaroorat nahi |
+| **307 Temporary Redirect**        | 302 jaisa hi hai, lekin request method change nahi hota | POST request wapas POST hi rahegi                                               |
+| **308 Permanent Redirect**        | 301 jaisa hi hai, lekin request method same rahega      | Permanent redirect without method change                                        |
 
-* **500 Internal Server Error** : A generic error message indicating that something went wrong on the server.
-* **501 Not Implemented** : The server does not support the functionality required to fulfill the request.
-* **502 Bad Gateway** : The server, while acting as a gateway, received an invalid response from the upstream server.
-* **503 Service Unavailable** : The server is currently unavailable (e.g., due to overload or maintenance).
-* **504 Gateway Timeout** : The server, while acting as a gateway, did not receive a timely response from the upstream server.
-* **505 HTTP Version Not Supported** : The server does not support the HTTP version used in the request.
+---
 
-These categories help indicate the nature of the response and what action (if any) is needed to resolve issues.
+## **🔹 400 Series (Client Error) - Client Side Error ❌**
+
+Ye codes batate hain ki client (browser ya API request) me kuch galat hai.
+
+| **Code**                              | **Meaning**                                                | **Description**                                       |
+| ------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------- |
+| **400 Bad Request**                   | Request format galat hai                                         | Server request samajh nahi pa raha                          |
+| **401 Unauthorized**                  | Authentication required hai                                      | Login ya API key missing hai                                |
+| **402 Payment Required**              | Payment karni padegi                                             | Mostly paid services me aata hai                            |
+| **403 Forbidden**                     | Access allowed nahi hai                                          | User ke pass permission nahi hai                            |
+| **404 Not Found**                     | Resource exist nahi karta                                        | Galat URL ya delete ho gaya                                 |
+| **405 Method Not Allowed**            | Iss URL ke liye yeh HTTP method allowed nahi                     | Jaise POST karne ki koshish GET ke jagah                    |
+| **406 Not Acceptable**                | Server jo content bhej raha hai, wo client accept nahi kar sakta | Jaise koi specific format chahiye                           |
+| **407 Proxy Authentication Required** | Proxy authentication chahiye                                     | Client ko proxy me login karna padega                       |
+| **408 Request Timeout**               | Server ne bohot der tak response nahi bheja                      | Network slow ya client delay ho gaya                        |
+| **409 Conflict**                      | Request current state ke sath conflict ho rahi hai               | Jaise ek hi resource ko 2 log ek saath update kar rahe hain |
+| **410 Gone**                          | Resource permanently delete ho gaya hai                          | 404 jaisa, but confirm hai ki wapas nahi aayega             |
+| **411 Length Required**               | Content-Length header required hai                               | Server ko data length ka pata nahi                          |
+| **412 Precondition Failed**           | Request ki kuch conditions fail ho gayi                          | Jaise kisi version check me fail hona                       |
+| **413 Payload Too Large**             | Request body bohot badi hai                                      | Server handle nahi kar sakta                                |
+| **414 URI Too Long**                  | URL bohot bada hai                                               | Mostly GET request me long query string                     |
+| **415 Unsupported Media Type**        | Content type supported nahi hai                                  | Server expected format nahi samajh raha                     |
+| **429 Too Many Requests**             | Client ne bohot requests bhej di                                 | Rate limiting ya throttling ke wajah se                     |
+
+---
+
+## **🔹 500 Series (Server Error) - Server Side Error ⚠️**
+
+Ye codes batate hain ki problem server side me hai, client ka koi issue nahi hai.
+
+| **Code**                           | **Meaning**                      | **Description**                              |
+| ---------------------------------------- | -------------------------------------- | -------------------------------------------------- |
+| **500 Internal Server Error**      | Server me unknown issue aa gaya        | General error, kuch bhi ho sakta hai               |
+| **501 Not Implemented**            | Server is method ko support nahi karta | Jaise koi naya HTTP method use karna               |
+| **502 Bad Gateway**                | Server ke beech me koi issue hai       | Jaise ek proxy server ka response sahi nahi hai    |
+| **503 Service Unavailable**        | Server down ya busy hai                | Jaise maintenance mode ya overload                 |
+| **504 Gateway Timeout**            | Server ne timely response nahi diya    | Jaise ek server doosre server ka wait kar raha hai |
+| **505 HTTP Version Not Supported** | HTTP version support nahi hai          | Jaise koi purana HTTP version use ho raha ho       |
+
+---
+
+## **📌 Summary Table - All HTTP Status Codes**
+
+| **Series** | **Category**                            | **Example Codes** |
+| ---------------- | --------------------------------------------- | ----------------------- |
+| **1xx**    | Informational (Request process ho rahi hai)   | 100, 101, 102           |
+| **2xx**    | Success (Request successful)                  | 200, 201, 204           |
+| **3xx**    | Redirection (Client ko dusri jagah jaana hai) | 301, 302, 304           |
+| **4xx**    | Client Errors (Request me kuch galti hai)     | 400, 401, 403, 404      |
+| **5xx**    | Server Errors (Server side issue hai)         | 500, 502, 503, 504      |
+
+---
+
+### **🚀 Conclusion**
+
+Ye HTTP status codes har web developer aur backend engineer ke liye important hote hain. Agar kisi specific error code ka real-world example ya debugging tips chahiye, to batao! 😊
