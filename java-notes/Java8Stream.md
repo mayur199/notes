@@ -218,7 +218,6 @@ Toh ye code  **John** ,  **Jane** , aur **Jack** ko filter karega (kyunki sab "J
 
 ## Convert to employee object using map
 
-
 Agar aap `names` list ke elements ko **Employee** objects mein convert karna chahte hain, jisme har `Employee` object ka ek **name** field ho, toh aap thoda modification kar sakte hain. Sabse pehle, aapko **Employee** class banani padegi, aur phir stream ko modify karke `Employee` object create kar sakte hain.
 
 ### Step-by-Step:
@@ -295,7 +294,3 @@ Employee{name='JOHN'}
 Employee{name='JANE'}
 Employee{name='JACK'}
 ```
-
-### Summary:
-
-* Humne **names** list ko filter kiya, uske baad unhe uppercase mein convert karke **Employee** objects banaye, aur phir unhe list mein store kiya.
